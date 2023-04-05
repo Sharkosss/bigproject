@@ -10,19 +10,20 @@
     </head>
 
     <body>
-      <div class="navbar colornav navbar-fixed">
-        <nav> 
-            <div class="nav-wrapper colornav accent-2 ">
-                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper #212121 grey darken-4" id="nav">
+                <a href="contact.php" class="right hide-on-med-and-down" id="contact" >Contact</a>
+                    <ul id="nav-mobile" class="left hide-on-med-and-down">
                         <li><a href="index.php">Accueil</a></li>
-                        <li><a href="#">Jeux</a></li>
-                        <li style="margin-right: 0;"><a href="contact.php">Me contacter</a></li>
+                        <li><a href="badges.html">Jeux</a></li>
+                        
                     </ul>
-                </div>
-            </nav>
             </div>
+  </nav>
+        </div>
         
-            <section>
+            <section >
                 <div class="parallax-container">
                     <div class="parallax"><img src="img/cutimg1.jpg"></div>
                 </div>

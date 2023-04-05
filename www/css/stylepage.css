@@ -12,26 +12,7 @@ html, body {
   min-height: 100%;
 }
 
-nav {
-  background-color: #333 !important;
-  color: white !important;
-  padding: 0 !important;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-.navbar {
-  display: flex;
-  width: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.navbar a {
-  color: white;
-}
 
 .navbar-fixed {
   position: fixed;
@@ -40,34 +21,14 @@ nav {
   right: 0;
 }
 
-nav ul {
-  margin: 0;
-  padding: 0;
+
+#contact {
+  position: relative ;
+  right: 20px;
 }
 
-nav li {
-  display: inline-block;
-  margin-right: 10px;
-  margin-top: 0;
-  margin-bottom: 0;
-}
 
-nav li:first-child {
-  margin-right: auto;
-}
 
-nav li:last-child {
-  margin-right: 0;
-}
-
-nav li a {
-  color: white;
-  text-decoration: none;
-}
-
-.nav-wrapper {
-  width: 100%;
-}
 
 section {
   width: 80%;
@@ -78,10 +39,6 @@ h1 {
   text-align: center;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-}
 
 input[type=text], input[type=email], textarea {
   padding: 10px;
@@ -142,8 +99,12 @@ form {
 
 
 .success-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: green;
   margin-bottom: 10px;
+  
 }
 
 footer {
@@ -153,4 +114,5 @@ footer {
   padding: 10px;
   text-align: center;
   margin-top: auto;
+  
 }
