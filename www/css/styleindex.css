@@ -71,6 +71,10 @@ h1 {
   text-align: center;
 }
 
+.parallax-container {
+  width: 100% !important;
+}
+
 form {
   display: flex;
   flex-direction: column;

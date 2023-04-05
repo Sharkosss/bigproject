@@ -23,8 +23,19 @@
             </div>
         
             <section>
-                <h1>Bienvenue sur mon site web</h1>
-                <p>Ceci est la page d'accueil de mon site web.</p>
+                <div class="parallax-container">
+                    <div class="parallax"><img src="img/cutimg1.jpg"></div>
+                </div>
+                <div class="section white">
+                    <div class="row container">
+                        <h1 class="header">Bienvenue sur mon site web</h1>
+                        <p class="grey-text text-darken-3 lighten-3"> Ceci est la page d'accueil de mon site web.</p>
+                    </div>
+                </div>
+                <div class="parallax-container">
+                    <div class="parallax"><img src="img/cut2img1.jpg"></div>
+                </div>
+
             </section>
             <footer>
                 © Mon site web - Tous droits réservés
@@ -33,5 +44,9 @@
     </body>
 </html>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/jqueryjsmin.js" ></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/index.js"></script>
 
 

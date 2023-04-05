@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h> // nécessaire pour utiliser le type bool
 
-#define MAX_WRONG_GUESSES 6 // Le nombre maximum de mauvaises réponses autorisées
+#define MAX_WRONG_GUESSES 11 // Le nombre maximum de mauvaises réponses autorisées
 #define WORDS_COUNT 10 // Le nombre de mots dans la liste
 
 // La liste des mots à deviner
@@ -22,7 +23,7 @@ const char *WORDS[WORDS_COUNT] = {
 int main()
 {
     char word_to_guess[50];
-    char guessed_letters[26];
+    char guessed_letters[26] = {'\0'}; // initialise le tableau des lettres essayées à vide
     int wrong_guesses = 0;
 
     // Sélectionne un mot aléatoire dans la liste
@@ -69,24 +70,34 @@ int main()
         guessed_letters[strlen(guessed_letters)] = input[0];
 
         // Vérifie si la lettre est présente dans le mot à deviner
-        if (strchr(word_to_guess, input[0]) != NULL) {
-            for (int i = 0; i < strlen(word_to_guess); i++) {
-                if (word_to_guess[i] == input[0]) {
-                    found_letters[i] = input[0];
-                }
+        bool letter_found = false; // initialise la variable à false
+        for (int i = 0; i < strlen(word_to_guess); i++) {
+            if (word_to_guess[i] == input[0]) {
+                found_letters[i] = input[0];
+                letter_found = true; // indique que la lettre a été trouvée
             }
+        }
+
+        if (letter_found) { // si la lettre a été trouvée, ne pas compter comme une mauvaise réponse
+            printf("La lettre est dans le mot\n");
         } else {
             wrong_guesses++;
             printf("La lettre n'est pas dans le mot\n");
         }
+
+        printf("Il vous reste %d essais\n", MAX_WRONG_GUESSES - wrong_guesses); // affiche le nombre d'essais restants
+
+        if (wrong_guesses == MAX_WRONG_GUESSES) {
+            break;
+        }
     }
 
     // Affiche le résultat de la partie
+    printf("\nMot àdeviner : %s\n", word_to_guess);
     if (wrong_guesses == MAX_WRONG_GUESSES) {
-        printf("\nPerdu ! Le mot était %s\n", word_to_guess);
+        printf("Vous avez perdu ! Le mot était : %s\n", word_to_guess);
     } else {
-        printf("\nGagné ! Le mot était %s\n", word_to_guess);
+        printf("Félicitations, vous avez trouvé le mot : %s\n", word_to_guess);
     }
-
     return 0;
-}
+    }
