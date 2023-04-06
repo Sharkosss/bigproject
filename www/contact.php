@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
                 <a href="contact.php" class="right hide-on-med-and-down" id="contact" >Contact</a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li><a href="index.php">Accueil</a></li>
-                    <li><a href="#">Jeux</a></li>
+                    <li><a href="games/loadings/loading_blackjack.php">Jeux</a></li>
                     
                 </ul>
             </div>

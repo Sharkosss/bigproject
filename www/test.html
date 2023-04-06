@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jeu du pendu</title>
+	<style>
+        #hangman {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            margin: 50px auto;
+        }
+
+        #hangman div {
+            position: absolute;
+            background-color: black;
+            transition: stroke-dashoffset 1s linear;
+            stroke-dasharray: 200;
+            stroke-dashoffset: 200;
+        }
+
+        .head {
+            top: 0;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .body {
+            top: 30px;
+            left: 50%;
+            width: 10px;
+            height: 50px;
+            transform: translateX(-50%);
+        }
+
+        .left-arm {
+            top: 35px;
+            left: 20px;
+            width: 30px;
+            height: 10px;
+            transform: rotate(-45deg);
+            transform-origin: top left;
+        }
+
+        .right-arm {
+            top: 35px;
+            left: 70px;
+            width: 30px;
+            height: 10px;
+            transform: rotate(45deg);
+            transform-origin: top right;
+        }
+
+        .left-leg {
+            top: 80px;
+            left: 30px;
+            width: 10px;
+            height: 30px;
+            transform: rotate(-45deg);
+            transform-origin: top left;
+        }
+
+        .right-leg {
+            top: 80px;
+            left: 80px;
+            width: 10px;
+            height: 30px;
+            transform: rotate(45deg);
+            transform-origin: top right;
+        }
+    </style>
+
+
+    <script>
+        // Récupération des éléments SVG représentant les parties du bonhomme
+        const head = document.querySelector('#head path');
+        const body = document.querySelector('#body path');
+        const leftArm = document.querySelector('#left-arm path');
+        const rightArm = document.querySelector('#right-arm path');
+        const leftLeg = document.querySelector('#left-leg path');
+        const rightLeg = document.querySelector('#right-leg path');
+
+        // Tableau contenant les parties du bonhomme dans l'ordre où elles doivent apparaître
+        const hangmanParts = [head, body, leftArm, rightArm, leftLeg, rightLeg];
+
+        // Index de la partie du bonhomme à afficher
+        let currentPartIndex = 0;
+
+        // Fonction pour afficher la prochaine partie du bonhomme
+        function showNextHangmanPart() {
+            hangmanParts[currentPartIndex].style.strokeDashoffset = '0';
+            currentPartIndex++;
+        }
+
+        // Fonction pour effacer toutes les parties du bonhomme
+        function hideAllHangmanParts() {
+            hangmanParts.forEach(part => {
+                part.style.strokeDashoffset = '200';
+            });
+            currentPartIndex = 0;
+        }
+
+        // Fonction pour réinitialiser le jeu
+        function resetHangmanGame() {
+            hideAllHangmanParts();
+            showNextHangmanPart();
+        }
+
+        // Événement déclenché lorsqu'une touche est pressée sur le clavier
+        document.addEventListener('keydown', function(event) {
+            // Ici on teste si la touche pressée est une lettre de l'alphabet
+            if (event.keyCode >= 65 && event.keyCode <= 90) {
+            const letter = event.key.toLowerCase();
+                    // Code à ajouter : Vérifier si la lettre est dans le mot à deviner
+                    const wordToGuess = 'pendu'; // Code de test, à remplacer avec la vraie variable contenant le mot à deviner
+                    if (wordToGuess.includes(letter)) {
+                        // Code à ajouter : Afficher la lettre dans le mot à deviner
+                    } else {
+                        // Code à ajouter : Afficher la prochaine partie du bonhomme
+                        showNextHangmanPart();
+                    }
+                }
+            });
+    </script>
+    <body>
+        <h1>Jeu du pendu</h1>
+        <svg id="hangman" viewBox="0 0 120 120">
+            <path id="head" class="head" d="M60,30a30,30 0 1,0 0,60a30,30 0 1,0 0,-60"></path>
+            <path id="body" class="body" d="M60,60v50"></path>
+            <path id="left-arm" class="left-arm" d="M60,70v10h-30"></path>
+            <path id="right-arm" class="right-arm" d="M60,70v10h30"></path>
+            <path id="left-leg" class="left-leg" d="M60,110v10h-10"></path>
+            <path id="right-leg" class="right-leg" d="M60,110v10h10"></path>
+        </svg>
+    </body>
+</html>
