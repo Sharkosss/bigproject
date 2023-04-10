@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Mon Site Web</title>
+        <title>Portfoleo</title>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
@@ -57,7 +57,7 @@
                 </div>
                 <div class="section white">
                     <div class="row container">
-                        <h1 class="header">Bienvenue sur mon site web</h1>
+                        <h1 class="header">Bienvenue sur mon portfolio !</h1>
                         <div class="row">
                             <div class="col s12 m6">
                                 <img src="img/GRISEY.jpg" alt="Grisey Léo" style="width: 50%;position: relative; top: 10px; left: 240px;">
