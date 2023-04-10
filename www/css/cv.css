@@ -1,0 +1,72 @@
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+
+body {
+    background-image: url("../img/cv/background/bg_cv.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode: multiply;
+    background-size: 100% auto;
+    background-attachment: fixed;
+} 
+
+
+
+    
+#contact {
+    position: relative ;
+    right: 20px;
+    }
+
+.cv-image {
+    margin-top: 100px !important;
+    }
+
+.dropdown-color {
+    background-color: black !important;
+    }
+
+.dropdown-content a {
+    color: white !important;
+    }
+
+
+.buttons-container {
+    position: fixed;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    }
+    
+.zoom-button {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+    }
+    
+#btn-download {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    }
+      
+
+footer {
+  
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}

@@ -12,6 +12,12 @@ html, body {
   min-height: 100%;
 }
 
+/* .dropdown-color {
+  background-color: black !important;
+  }
+.dropdown-content a {
+  color: white !important;
+  } */
 
 
 .navbar-fixed {
@@ -20,6 +26,7 @@ html, body {
   left: 0;
   right: 0;
 }
+
 
 
 #contact {

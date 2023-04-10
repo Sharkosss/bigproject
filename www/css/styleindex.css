@@ -12,6 +12,13 @@ html, body {
 }
 
 
+.dropdown-color {
+  background-color: black !important;
+  }
+  
+.dropdown-content a {
+  color: white !important;
+  }
 
 h1 {
   text-align: center;
@@ -20,6 +27,7 @@ h1 {
 .parallax-container {
   width: 100% !important;
 }
+
 
 form {
   display: flex;
@@ -35,7 +43,5 @@ footer {
   padding: 10px;
   text-align: center;
 }
-
-
 
 

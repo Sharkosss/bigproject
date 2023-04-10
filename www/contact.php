@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
 <head>
     <title>Me contacter</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" href="css/stylepage.css">
     <meta charset="UTF-8">
@@ -35,11 +35,30 @@ if (isset($_POST['submit'])) {
                 <a href="contact.php" class="right hide-on-med-and-down" id="contact" >Contact</a>
                 <ul id="nav-mobile" class="left hide-on-med-and-down">
                     <li><a href="index.php">Accueil</a></li>
-                    <li><a href="games/loadings/loading_blackjack.php">Jeux</a></li>
+                    <li><a href="cv.php">CV</a></li>
+                    <li>
+                        <a class="dropdown-trigger" data-beloworigin="true" href="#!" data-target="dropdown1">
+                            Jeux<i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                    </li>
+
                     
-                </ul>
+                </ul>       
             </div>
         </nav>
+
+        <ul id="dropdown1" class="dropdown-content dropdown-color">
+            <style> 
+                .dropdown-color {
+                    background-color: black !important;
+                    }
+                .dropdown-content a {
+                    color: white !important;
+                    }
+            </style>
+            <li><a href="games/loadings/loading_blackjack.php">Blackjack</a></li>
+            <li><a href="#!">pendu</a></li>
+        </ul>
     </div>
     <div id="main">
         <section>
@@ -65,3 +84,8 @@ if (isset($_POST['submit'])) {
 
 </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/jqueryjsmin.js" ></script>
+<script src="js/materialize.min.js"></script>
+<script src="js/contact.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
