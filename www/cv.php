@@ -37,7 +37,7 @@
             <ul id="dropdown1" class="dropdown-content dropdown-color">
 
                 <li><a href="games/loadings/loading_blackjack.php">Blackjack</a></li>
-                <li><a href="#!">pendu</a></li>
+                <li><a href="games/loadings/loading_pendu.php">Pendu</a></li>
             </ul>
         </div>
         <div class="center-align">
