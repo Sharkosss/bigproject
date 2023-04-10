@@ -44,7 +44,7 @@
             }
         </style>
         <li><a href="games/loadings/loading_blackjack.php">Blackjack</a></li>
-        <li><a href="#!">pendu</a></li>
+        <li><a href="games/loadings/loading_pendu.php">Pendu</a></li>
     </ul>
     
 

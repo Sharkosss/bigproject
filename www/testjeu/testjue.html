@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blackjack</title>
+</head>
+<body>
+    <h1>Blackjack</h1>
+    <div id="game-container">
+        <div id="user-hand"></div>
+        <div id="user-score"></div>
+        <div id="dealer-hand"></div>
+        <div id="dealer-score"></div>
+        <div id="buttons">
+            <button id="hit-button">Hit</button>
+            <button id="stand-button">Stand</button>
+        </div>
+        <div id="message"></div>
+        <button id="new-game-button">New Game</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/pythonpad/brython-runner/dist/brython-runner.bundle.js"></script>
+    <script type="text/python">
+        import browser
+        from browser import document, window
+        import random
+
+        def deal_card():
+            """Retourne une carte aléatoire"""
+            cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+            card = random.choice(cards)
+            return card
+
+        def calculate_score(cards):
+            """Prend une liste de cartes et retourne le score total"""
+            if sum(cards) == 21 and len(cards) == 2:
+                return 0
+            if 11 in cards and sum(cards) > 21:
+                cards.remove(11)
+                cards.append(1)
+            return sum(cards)
+
+        def compare(user_score, dealer_score):
+            """Compare les scores de l'utilisateur et de l'ordinateur et retourne un message"""
+            if user_score == dealer_score:
+                return "Match nul !"
+
+            elif dealer_score == 0:
+                return "Le dealer a blackjack ! Vous avez perdu."
+
+            elif user_score == 0:
+                return "Vous avez blackjack ! Vous avez gagné."
+
+            elif user_score > 21:
+                return "Vous avez dépassé 21 ! Vous avez perdu."
+
+            elif dealer_score > 21:
+                return "Le dealer a dépassé 21 ! Vous avez gagné."
+
+            elif user_score > dealer_score:
+                return "Vous avez gagné !"
+
+            else:
+                return "Vous avez perdu."
+
+        def show_hand(hand, score_element):
+            """Affiche la main du joueur et son score"""
+            score = calculate_score(hand)
+            score_element.textContent = f"Score : {score}"
+            hand_element = document.getElementById(score_element.id.replace("-score", "-hand"))
+            hand_element.textContent = f"Main : {hand}"
+
+        def end_game():
+            """Termine le jeu et affiche un message de fin"""
+            hit_button.disabled = True
+            stand_button.disabled = True
+            message_element.textContent = compare(user_score, dealer_score)
+
+        def hit():
+            """Ajoute une carte à la main de l'utilisateur"""
+            global user_score
+            user_hand.append(deal_card())
+            show_hand(user_hand, user_score_element)
+            if user_score > 21:
+                end_game()
+
+        def stand():
+            """Termine le tour de l'utilisateur et joue pour le dealer"""
+            global dealer_score
+            while dealer_score < 17:
+                dealer_hand.append(deal_card())
+                show_hand(dealer_hand, dealer_score_element)
+                dealer_score = calculate_score(dealer_hand)
+            end_game()
+
+            def new_game():
+            """Commence une nouvelle partie"""
+            global user_hand, dealer_hand, user_score, dealer_score
+            user_hand = []
+            dealer_hand = []
+            user_hand.append(deal_card())
+            user_hand.append(deal_card())
+            dealer_hand.append(deal_card())
+            show_hand(user_hand, user_score_element)
+            show_hand(dealer_hand, dealer_score_element)
+            hit_button.disabled = False
+            stand_button.disabled = False
+            message_element.textContent = ""
+
+        user_hand = []
+        dealer_hand = []
+        user_score = 0
+        dealer_score = 0
+
+        hit_button = document.getElementById("hit-button")
+        stand_button = document.getElementById("stand-button")
+        new_game_button = document.getElementById("new-game-button")
+        message_element = document.getElementById("message")
+        user_score_element = document.getElementById("user-score")
+        dealer_score_element = document.getElementById("dealer-score")
+
+        hit_button.bind("click", hit)
+        stand_button.bind("click", stand)
+        new_game_button.bind("click", new_game)
+
+        new_game()
+    </script>
+</body>
+</html>
