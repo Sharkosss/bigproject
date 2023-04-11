@@ -6,17 +6,27 @@ if (isset($_POST['submit'])) {
     $message = $_POST['message'];
 
     // Connexion à la base de données
-    $db = mysqli_connect("localhost", "root", "root", "contact");
+    $pdo = new PDO(
+        'mysql:host=localhost;dbname=contact;',
+        'root',
+        'root',
+        array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8')
+    );
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
 
     // Insertion des données du formulaire
-    $sql = "INSERT INTO contact (name, email, message) VALUES ('$name', '$email', '$message')";
-    mysqli_query($db, $sql);
+    $stmt = $pdo->prepare("INSERT INTO contact (name, email, message) VALUES (:name, :email, :message)");
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':message', $message);
+    $stmt->execute();
 
-    mysqli_close($db);
+    $pdo = null;
     $message_envoye = "Votre message a été envoyé avec succès !";
 }
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

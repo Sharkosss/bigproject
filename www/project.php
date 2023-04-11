@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
 <?php 
-        require_once "cfg/config.php";
-        $sql = "SELECT * FROM project WHERE id=:id";    
-        $pre = $pdo->prepare($sql);
-        $pre->bindParam("id",$_GET["id"]);
+        require_once "Config/config.php";
+        $sql = "SELECT * FROM projects WHERE id=:id";
+        $pre = $pdo_projects-> prepare($sql);
+	      $pre->bindParam("id",$_GET["id"]);
         $pre->execute();
-        $project = $pre->fetch(PDO::FETCH_ASSOC);
+        $projects = $pre->fetchall(PDO::FETCH_ASSOC);
 
         ?>
   <html>
