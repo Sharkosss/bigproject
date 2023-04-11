@@ -113,21 +113,21 @@
                                 <h2 class="socialmediatitle grey-text text-darken-3 lighten-3" > Ou me retrouver ? </h2>
                                 <br>
                                 <div class="socialmediapictures col s12 m4 l4" >
-                                <a href="https://github.com/requinxv" > <img src="img/github.png" alt="requinxv" id="pictures"></a>
+                                <a href="https://github.com/requinxv" > <img src="img/github.png" alt="requinxv" id="pictures" onmouseover="grossirImage(this)" onmouseout="retrecirImage(this)"></a>
                                     <br>
                                     <a href="https://github.com/Sharkosss" id="color"> requinxv </a> 
                                     <br>
                                     <br>
                                 </div>
                                 <div class="socialmediapictures col s12 m4 l4">
-                                    <a href="https://github.com/Sharkosss" > <img src="img/github.png" alt="Sharkosss" id="pictures" > </a>
+                                    <a href="https://github.com/Sharkosss" > <img src="img/github.png" alt="Sharkosss" id="pictures"onmouseover="grossirImage(this)" onmouseout="retrecirImage(this)" > </a>
                                     <br>
                                     <a href="https://github.com/Sharkosss" id="color"> Sharkosss </a>
                                     <br>
                                     <br>
                                 </div>
                                 <div class="socialmediapictures col s12 m4 l4">
-                                    <a href="https://www.linkedin.com/in/l%C3%A9o-grisey-6035a6241" > <img src="img/linkedin.png" alt="Sharkosss" id="pictures" > </a>
+                                    <a href="https://www.linkedin.com/in/l%C3%A9o-grisey-6035a6241" > <img src="img/linkedin.png" alt="Sharkosss" id="pictures" onmouseover="grossirImage(this)" onmouseout="retrecirImage(this)"> </a>
                                     <br>
                                     <a href="https://www.linkedin.com/in/l%C3%A9o-grisey-6035a6241" id="color" > Léo </a>
                                     <br>

@@ -47,6 +47,7 @@ h1 {
 #pictures{
   width: 20% !important;
   position: relative !important;
+  transition: transform 0.2s;
 }
 
 #color{

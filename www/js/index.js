@@ -15,3 +15,11 @@ dropdown.onclick = function(){
     dropdown.classList.toggle('active');
 }
 
+function grossirImage(img) {
+    img.style.transform = "scale(1.5)";
+}
+  
+function retrecirImage(img) {
+    img.style.transform = "scale(1)";
+}
+  
