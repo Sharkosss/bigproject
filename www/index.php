@@ -29,6 +29,12 @@
                     </a>
                 </li>
 
+                <li>
+                    <a class="dropdown-trigger" data-beloworigin="true" href="#!" data-target="dropdown2">
+                        Projects<i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+
                 
             </ul>       
         </div>
@@ -37,7 +43,7 @@
     <ul id="dropdown1" class="dropdown-content dropdown-color">
         <style> 
         .dropdown-color {
-            background-color: black !important;
+            background-color: #212121 !important;
             }
         .dropdown-content a {
             color: white !important;
@@ -45,6 +51,28 @@
         </style>
         <li><a href="games/loadings/loading_blackjack.php">Blackjack</a></li>
         <li><a href="games/loadings/loading_pendu.php">Pendu</a></li>
+    </ul>
+
+    <ul id="dropdown2" class="dropdown-content dropdown-color2">
+        <style> 
+        .dropdown-color2 {
+            background-color: #212121 !important;
+            }
+        .dropdown-content a {
+            color: white !important;
+            }
+        </style>
+        <?php
+        // $sql = "SELECT * FROM project";
+        // $pre = $pdo -> prepare($sql);
+        // $projects = $pre->fetchall(PDO::FETCH_ASSOC);
+
+        // foreach($projects as $project){
+        ?> 
+        <li><a href="<? echo $project['id']?>"><? echo $project['projectname']?></a></li>
+        <?php
+        // }
+        ?>
     </ul>
     
 
@@ -59,10 +87,10 @@
                     <div class="row container">
                         <h1 class="header">Bienvenue sur mon portfolio !</h1>
                         <div class="row">
-                            <div class="col s12 m6">
-                                <img src="img/GRISEY.jpg" alt="Grisey Léo" style="width: 50%;position: relative; top: 10px; left: 240px;">
+                            <div class="col s12 m6 l4">
+                                <img src="img/GRISEY.jpg" alt="Grisey Léo" id="grisey">
                             </div>
-                            <div class="col s12 m6">
+                            <div class="col s12 m6 l7">
                                 <p class="grey-text text-darken-3 lighten-3"> 
                                     Bonjour et bienvenue sur mon portfolio! Je suis Léo Grisey, un étudiant passionné de cybersécurité âgé de 18 ans et résidant dans la ville de Lyon. Actuellement en première année à Guardia, je suis déterminé à acquérir toutes les compétences nécessaires pour devenir un expert en sécurité informatique.
                                     <br>
@@ -78,6 +106,33 @@
                                     <br>
                                     Merci de votre intérêt et j'espère avoir l'occasion de discuter avec vous prochainement.
                                 </p>
+                            </div>
+                            <div class="socialmedia col s12 m12">
+                                <br>
+                                <br>
+                                <h2 class="socialmediatitle grey-text text-darken-3 lighten-3" > Ou me retrouver ? </h2>
+                                <br>
+                                <div class="socialmediapictures col s12 m4 l4" >
+                                <a href="https://github.com/requinxv" > <img src="img/github.png" alt="requinxv" id="pictures"></a>
+                                    <br>
+                                    <a href="https://github.com/Sharkosss" id="color"> requinxv </a> 
+                                    <br>
+                                    <br>
+                                </div>
+                                <div class="socialmediapictures col s12 m4 l4">
+                                    <a href="https://github.com/Sharkosss" > <img src="img/github.png" alt="Sharkosss" id="pictures" > </a>
+                                    <br>
+                                    <a href="https://github.com/Sharkosss" id="color"> Sharkosss </a>
+                                    <br>
+                                    <br>
+                                </div>
+                                <div class="socialmediapictures col s12 m4 l4">
+                                    <a href="https://www.linkedin.com/in/l%C3%A9o-grisey-6035a6241" > <img src="img/linkedin.png" alt="Sharkosss" id="pictures" > </a>
+                                    <br>
+                                    <a href="https://www.linkedin.com/in/l%C3%A9o-grisey-6035a6241" id="color" > Léo </a>
+                                    <br>
+                                    <br>
+                                </div>
                             </div>
                         </div>
                     </div>
