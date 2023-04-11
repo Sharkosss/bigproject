@@ -16,7 +16,7 @@ dropdown.onclick = function(){
 }
 
 function grossirImage(img) {
-    img.style.transform = "scale(1.5)";
+    img.style.transform = "scale(1.1)";
 }
   
 function retrecirImage(img) {

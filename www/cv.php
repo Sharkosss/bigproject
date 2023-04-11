@@ -28,6 +28,11 @@
                                 Jeux<i class="material-icons right">arrow_drop_down</i>
                             </a>
                         </li>
+                        <li>
+                            <a class="dropdown-trigger" data-beloworigin="true" href="#!" data-target="dropdown2">
+                                 Projects<i class="material-icons right">arrow_drop_down</i>
+                            </a>
+                        </li>
 
                         
                     </ul>       
@@ -40,6 +45,21 @@
                 <li><a href="games/loadings/loading_pendu.php">Pendu</a></li>
             </ul>
         </div>
+
+
+        <ul id="dropdown2" class="dropdown-content dropdown-color2">
+        <?php
+        // $sql = "SELECT * FROM project";
+        // $pre = $pdo -> prepare($sql);
+        // $projects = $pre->fetchall(PDO::FETCH_ASSOC);
+
+        // foreach($projects as $project){
+        ?> 
+        <li><a href="<? echo $project['id']?>"><? echo $project['projectname']?></a></li>
+        <?php
+        // }
+        ?>
+    </ul>
         <div class="center-align">
             <img src="img/cv/cv.jpg" id="image" width="40%" height="auto" class="cv-image" />
             <div class="buttons-container">
